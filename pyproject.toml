@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mindor-laya-trainer"
+# version = "<our-release>+laya.<upstream-pypi-version>".  Bump the base when
+# THIS package's API changes; bump the local-version tag when the compatible
+# upstream `laya` version changes.
+version = "1.0.0+laya.0.3.23"
+description = "Supervised + RLCD fine-tuning for Laya typed-decision models."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Hanyeol Cho" }]
+keywords = ["laya", "typed-decision", "fine-tuning", "rlcd"]
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "torch>=2.0",
+  "transformers>=4.48",
+  "safetensors>=0.4",
+  "huggingface_hub>=0.20",
+  "laya>=0.3.20",
+  "numpy>=1.20",
+]
+
+[project.urls]
+Homepage = "https://github.com/hanyeol/mindor-laya-trainer"
+Repository = "https://github.com/hanyeol/mindor-laya-trainer"
+Upstream = "https://github.com/NandhaKishorM/laya"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["laya_trainer*"]
